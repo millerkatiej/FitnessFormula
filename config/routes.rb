@@ -1,4 +1,7 @@
 Fitnessformula::Application.routes.draw do
+  devise_for :users
+  root 'welcome#home' #whatever is on the left is the name of the controller, on the right is the name of the method
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
