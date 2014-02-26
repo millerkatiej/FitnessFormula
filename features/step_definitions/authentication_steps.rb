@@ -2,8 +2,8 @@ When(/^I go to the homepage$/) do
   visit "/"
 end
 
-When(/^I follow "(.*?)"$/) do |button|
-  click_button(button)
+When(/^I follow "(.*?)"$/) do |link|
+  click_link(link)
 end
 
 When(/^I fill in "(.*?)" for "(.*?)"$/) do |content, field|
@@ -18,16 +18,10 @@ Then(/^I should see "(.*?)"$/) do |text|
     page.should have_content(text)
 end
 
-Then(/^I should not see "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then(/^I should not see "(.*?)"$/) do |text|
+  page.should_not have_content(text)
 end
 
-Given(/^the following user:$/) do |table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
-end
 
-When(/^I should not see "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
+
 
