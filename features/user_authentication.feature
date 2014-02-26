@@ -20,9 +20,14 @@ Feature: User authentication
     When I follow "Sign Out"
     Then I should not see "Sign Out"
     And I should see "Sign In"
+    
+  Scenario: User can log in and log out with email
+    Given the following user:
+      | email                 | joe@example.com |
+    When I go to the homepage
     And I follow "Sign In"
-    And I fill in "test@test.com" for "user_email"
-    And I fill in "testtest" for "user_password"
+    And I fill in "joe@example.com" for "Email"
+    And I fill in "password" for "Password"
     And I press "Sign in"
     Then I should see "Signed in successfully."
     And I should see "Sign Out"
@@ -30,6 +35,5 @@ Feature: User authentication
     When I follow "Sign Out"
     And I should not see "Sign Out"
     And I should see "Sign In"
-
 
   
