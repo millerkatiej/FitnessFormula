@@ -1,0 +1,21 @@
+<h1>All Exercises</h1>
+ 
+<table>
+  <tr>
+    <th>Exercise</th>
+    <th>Time (in minutes)</th>
+    <th>Reps or miles</th>
+    <th>Exhaustion level</th>
+    <th>Date</th>
+  </tr>
+ 
+  <% @exercises.each do |exercise| %>
+    <tr>
+      <td><%= exercise.exercise_name %></td>
+      <td><%= exercise.time_in_minutes %></td>
+      <td><%= exercise.reps_or_miles %></td>
+      <td><%= exercise.exhaustion_level %></td>
+      <td><%= exercise.date %></td>
+    </tr>
+  <% end %>
+</table>

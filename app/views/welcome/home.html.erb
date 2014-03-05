@@ -10,14 +10,16 @@
         <th>Reps/miles</th>
         <th>Exhaustion Level (out of 10)</th>
         <th>Date (mm/dd/yy)</th>
-      </tr>
+      </tr> 
+      <% @exercises.each do |exercise| %>
       <tr>
-        <td></td>
-        <td></td> 
-        <td></td>
-        <td></td>
-        <td></td>
+        <td><%= exercise.exercise_name %></td>
+        <td><%= exercise.time_in_minutes %></td>
+        <td><%= exercise.reps_or_miles %></td>
+        <td><%= exercise.exhaustion_level %></td>
+        <td><%= exercise.date %></td>
       </tr>
+      <% end %>
     </table>
   <% else %>
     <%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %>

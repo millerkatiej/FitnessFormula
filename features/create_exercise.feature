@@ -19,4 +19,4 @@ Scenario: The user adds an exercise to an empty table
   And I fill in "4" for "Reps or miles"
   And I fill in "8" for "Exhaustion level"
   And I fill in "02/24/14" for "Date"
-  And I press "Add Exercise"
+  And I press "Save Exercise"
