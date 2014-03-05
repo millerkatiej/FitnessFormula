@@ -1,0 +1,36 @@
+<h2>New Exercise</h2>
+<%= form_for :exercise, url: exercises_path do |f| %>
+  <p>
+    <%= f.label :exercise_name %><br>
+    <%= f.text_field :exercise_name %>
+  </p>
+ 
+  <p>
+    <%= f.label :reps %><br>
+    <%= f.text_field :reps %>
+  </p>
+ 
+  <p>
+    <%= f.label :time_in_minutes %><br>
+    <%= f.text_field :time_in_minutes %>
+  </p>
+
+  <p>
+    <%= f.label :reps_or_miles %><br>
+    <%= f.text_field :reps_or_miles %>
+  </p>
+  
+  <p>
+    <%= f.label :exhaustion_level %><br>
+    <%= f.text_field :exhaustion_level %>
+  </p>
+
+  <p>
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
