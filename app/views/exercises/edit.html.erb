@@ -1,5 +1,5 @@
-<h2>New Exercise</h2>
-<%= form_for :exercise, url: exercises_path do |f| %>
+<h2>Edit Exercise</h2>
+<%= form_for :exercise, url: exercise_path(@exercise), method: :patch do  |f| %>
  <% if @exercise.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@exercise.errors.count, "error") %> prohibited
@@ -43,3 +43,4 @@
 <% end %>
 
 <%= link_to 'All Exercises', exercises_path %>
+<div id="corner_signout"><%= current_user.email %> |     <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></div>
