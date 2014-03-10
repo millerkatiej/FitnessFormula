@@ -1,4 +1,5 @@
 class ExercisesController < ApplicationController
+  helper_method :sort_column, :sort_direction
   def new
     @exercise = Exercise.new
   end
@@ -18,7 +19,7 @@ class ExercisesController < ApplicationController
   end
 
   def index
-    @exercises = Exercise.all
+    @exercises = Exercise.order(sort_column + " " + sort_direction)
   end
 
   def update
@@ -45,5 +46,13 @@ class ExercisesController < ApplicationController
   private
     def exercise_params
       params.require(:exercise).permit(:exercise_name, :time_in_minutes, :reps_or_miles, :exhaustion_level, :date)
+    end
+
+    def sort_column
+      Exercise.column_names.include?(params[:sort]) ? params[:sort] : "exercise_name"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end

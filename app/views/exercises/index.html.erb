@@ -1,28 +1,32 @@
 
-<h1>All Exercises</h1>
- 
-<table>
-  <tr>
-    <th>Exercise</th>
-    <th>Time (in minutes)</th>
-    <th>Reps or miles</th>
-    <th>Exhaustion level</th>
-    <th>Date</th>
-  </tr>
- 
-  <% @exercises.each do |exercise| %>
-    <tr>
-      <td><%= exercise.exercise_name %></td>
-      <td><%= exercise.time_in_minutes %></td>
-      <td><%= exercise.reps_or_miles %></td>
-      <td><%= exercise.exhaustion_level %></td>
-      <td><%= exercise.date %></td>
-      <td><%= link_to 'Show', exercise_path(exercise) %></td>
-      <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
-      <td><%= link_to 'Delete', exercise_path(exercise),
-                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
-<%= link_to 'New Exercise', new_exercise_path %>
-<div id="corner_signout"><%= current_user.email %> |     <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></div>
+  <div id="corner_signout"><%= current_user.email %> |     <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></div>
+
+  <h1>All Exercises</h1>
+   
+  <table id="exercise_table" class="exercise_index_table">
+    <thead>
+      <tr>
+        <th><%= sortable "exercise_name", "Exercise" %></th>
+        <th><%= sortable"time_in_minutes", "Time (in minutes)" %></th>
+        <th><%= sortable "reps_or_miles", "Reps or miles" %></th>
+        <th><%= sortable "exhaustion_level", "Exhaustion level" %></th>
+        <th><%= sortable "date", "Date" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @exercises.each do |exercise| %>
+        <tr>
+          <td><%= exercise.exercise_name %></td>
+          <td><%= exercise.time_in_minutes %></td>
+          <td><%= exercise.reps_or_miles %></td>
+          <td><%= exercise.exhaustion_level %></td>
+          <td><%= exercise.date.to_formatted_s(:long) %></td>
+          <td><%= link_to 'Show', exercise_path(exercise) %></td>
+          <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
+          <td><%= link_to 'Delete', exercise_path(exercise),
+                        method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+  <%= link_to 'New Exercise', new_exercise_path %>

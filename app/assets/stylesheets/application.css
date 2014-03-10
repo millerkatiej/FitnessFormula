@@ -12,6 +12,51 @@
  *= require_tree .
  */
 
+body {
+  background-color: #fdf7f7
+}
 
-/*= require foundation */
 
+#home_logo {
+  width: 100%;
+}
+
+#corner_signout {
+  float: right;
+}
+
+#corner_signin {
+  float: right;
+}
+
+#home_p {
+  text-align: center;
+}
+
+
+table.exercise_index_table {
+  border-collapse: collapse;
+}
+
+.exercise_index_table td, .exercise_index_table th {
+  padding: 4px 10px;
+  border: solid 1px #AAA;
+}
+
+.exercise_index_table .price {
+  text-align: right;
+}
+
+.exercise_index_table th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.exercise_index_table th .asc {
+  background-image: url(http://cdn-images.sewelldirect.com/siteimages/layout/upArrow.gif);
+}
+
+.exercise_index_table th .desc {
+  background-image: url(http://www.pearsonvue.com/athena/static/images/down_arrow.gif);
+}

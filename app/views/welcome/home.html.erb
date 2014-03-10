@@ -4,6 +4,12 @@
     <form method="get" action="exercises/new"><button type="submit">Add Exercise</button></form>
     <%= link_to 'See All Exercises', controller: 'exercises' %>
   <% else %>
-    <%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %>
-  <% end %>      
+    <div id="corner_signin"><%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %></div>
+    <br>  
+    <img id="home_logo" src="http://www.freeimagehosting.net/newuploads/2ydph.jpg">
+    <br>
+    <div id="home_p">
+      <p>Welcome to The Fitness Formula! Our goal is to help you achieve your fitness goals. With The Fitness Formula, you can easily track your daily fitness routines, from how long you ran on Tuesday to how many pushups you were able to pump out on Thursday!<br><br>Simply sign in or sign up to get started.</p>
+    </div>
+   <% end %>  
 </div>

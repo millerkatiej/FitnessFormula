@@ -1,3 +1,4 @@
+<div id="corner_signout"><%= current_user.email %> |     <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></div>
 <p>
   <strong>Exercise:</strong>
   <%= @exercise.exercise_name %>
@@ -24,4 +25,3 @@
 </p>
 <%= link_to 'Edit', edit_exercise_path(@exercise) %>
 <%= link_to 'All Exercises', exercises_path %>
-<div id="corner_signout"><%= current_user.email %> |     <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></div>

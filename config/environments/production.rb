@@ -77,4 +77,6 @@ Fitnessformula::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  Time::DATE_FORMATS[:due_date] = "due on %B %d at %I:%M %p"
+
 end

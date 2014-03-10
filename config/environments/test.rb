@@ -33,4 +33,5 @@ Fitnessformula::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+  Time::DATE_FORMATS[:due_date] = "due on %B %d at %I:%M %p"
 end
