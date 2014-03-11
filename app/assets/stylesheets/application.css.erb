@@ -1,3 +1,4 @@
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -12,14 +13,25 @@
  *= require_tree .
  */
 
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,700);
+
 body {
-  background-color: #fdf7f7
+  background-image: url(<%= asset_path 'ff_background.gif' %>) 
 }
 
-
-#home_logo {
-  width: 100%;
+body {
+  font-family: 'Josefin Slab', serif;
+  font-weight: bold;
 }
+
+h1 {
+  font-weight: normal;
+}
+
+#search_box {
+  float: right;
+}
+
 
 #corner_signout {
   float: right;
@@ -36,6 +48,7 @@ body {
 
 table.exercise_index_table {
   border-collapse: collapse;
+  width: 100%;
 }
 
 .exercise_index_table td, .exercise_index_table th {
@@ -54,9 +67,9 @@ table.exercise_index_table {
 }
 
 .exercise_index_table th .asc {
-  background-image: url(http://cdn-images.sewelldirect.com/siteimages/layout/upArrow.gif);
+  background-image: url(<%= asset_path 'up_arrow.gif' %>);
 }
 
 .exercise_index_table th .desc {
-  background-image: url(http://www.pearsonvue.com/athena/static/images/down_arrow.gif);
+  background-image: url(<%= asset_path 'down_arrow.gif' %>);
 }

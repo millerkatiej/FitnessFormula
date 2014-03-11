@@ -21,7 +21,7 @@
  
 <p>
   <strong>Date:</strong>
-  <%= @exercise.date %>
+  <%= @exercise.date.to_formatted_s(:long) %>
 </p>
 <%= link_to 'Edit', edit_exercise_path(@exercise) %>
 <%= link_to 'All Exercises', exercises_path %>

@@ -19,7 +19,11 @@ class ExercisesController < ApplicationController
   end
 
   def index
-    @exercises = Exercise.order(sort_column + " " + sort_direction)
+    if params[:search]
+      @exercises = Exercise.find(:all, :conditions => ['exercise_name LIKE ?', "%#{params[:search]}%"])
+    else
+      @exercises = Exercise.order(sort_column + " " + sort_direction)
+    end
   end
 
   def update

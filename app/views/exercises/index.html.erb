@@ -1,8 +1,7 @@
-
   <div id="corner_signout"><%= current_user.email %> |     <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></div>
 
+<%= image_tag "ff_logo.gif" %>
   <h1>All Exercises</h1>
-   
   <table id="exercise_table" class="exercise_index_table">
     <thead>
       <tr>
@@ -29,4 +28,12 @@
       </tbody>
     <% end %>
   </table>
+   <div id="search_box"><%= form_tag exercises_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+  <% end %></div>
+  <br>
   <%= link_to 'New Exercise', new_exercise_path %>
+ 
