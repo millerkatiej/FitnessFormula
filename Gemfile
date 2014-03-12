@@ -17,7 +17,6 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
 
-
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -34,3 +33,5 @@ group :test do
   gem 'email_spec'
   gem 'launchy'
 end
+
+gem 'rails_12factor', group: :production
